@@ -24,12 +24,12 @@ class FiguresController < ApplicationController
   end
 
   patch '/figures/:id' do
-    binding.pry
+    
     @figure = Figure.find(params[:id])
     @figure.name = params[:figure][:name]
-    new_title = Title.create(params[:figure][:title_ids])
+    new_title = Title.create(name: params[:figure][:title_ids])
     @figure.title < new_title
-    new_landmark = Landmark.create(params[:figure][:landmark_ids])
+    new_landmark = Landmark.create(name: params[:figure][:landmark_ids])
     @figure.landmark < new_landmark
     @figure.save
 
