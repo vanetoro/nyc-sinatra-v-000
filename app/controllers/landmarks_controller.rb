@@ -10,8 +10,10 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/new'
   end
 
-  get 'landmarks/:slug/edit' do
+  get 'landmarks/:id/edit' do
+    @landmark = Landmark.find(params[:id])
 
+    erb :'/landmark/edit'
   end
 
   get '/landmarks/:id' do
