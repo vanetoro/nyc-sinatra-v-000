@@ -1,7 +1,7 @@
 <form action="/figures/<%=@figure.id%>" method="post">
   <input type="hidden" id="hidden" name="_method" value="patch">
   Figure Name: <input type='text' name='figure[name]' value="<%=@figure.name%>" id='figure_name'>
-  Figure Title: <input type="text" name='figure[title_ids]'>
+  Figure Title: <input type="text" name='figure[title_ids]' value=''>
   Figure Landmark: <input type="text" name='figure[landmark_ids]'id='new_landmark'>
   <input type="submit" value="Edit Figure">
 </form>
