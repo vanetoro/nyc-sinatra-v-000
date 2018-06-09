@@ -30,15 +30,15 @@ class FiguresController < ApplicationController
 
     @title = Title.create(name: params[:figure][:title_ids])
     @landmark = Landmark.create(name: params[:figure][:landmark_ids])
-
+    binding.pry
     if !@title.empty?
       @figure.title << @title
     end
     if !@landmark.empty?
       @figure.landmark << new_landmark
-    end 
+    end
     @figure.save
-    binding.pry
+
     redirect "figure/#{@figure.id}"
   end
 
