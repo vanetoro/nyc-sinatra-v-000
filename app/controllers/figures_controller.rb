@@ -30,7 +30,7 @@ class FiguresController < ApplicationController
 
     @title = params[:figure][:title_ids]
     @landmark = params[:figure][:landmark_ids]
-
+    binding.pry
     if !@title.empty?
       @figure.title << Title.find_or_create_by(params[:figure][:title_ids])
     end
@@ -38,7 +38,7 @@ class FiguresController < ApplicationController
       @figure.landmark << Landmark.find_or_create_by(params[:figure][:landmark_ids])
     end
     @figure.save
-    binding.pry
+
     redirect "figure/#{@figure.id}"
   end
 
