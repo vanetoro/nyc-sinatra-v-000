@@ -32,7 +32,7 @@ class FiguresController < ApplicationController
     new_landmark = Landmark.create(name: params[:figure][:landmark_ids])
     @figure.landmark << new_landmark
     @figure.save
-
+    binding.pry
     redirect "figure/#{@figure.id}"
   end
 
