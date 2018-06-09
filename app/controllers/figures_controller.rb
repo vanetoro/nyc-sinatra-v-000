@@ -36,7 +36,7 @@ class FiguresController < ApplicationController
     end
     if !@landmark.empty?
       new_landmark = Landmark.find_or_create_by(params[:figure][:landmark_ids])
-
+      binding.pry
       @figure.landmarks << new_landmark
     end
     @figure.save
