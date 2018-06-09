@@ -11,10 +11,16 @@ class FiguresController < ApplicationController
     erb :'figures/new'
   end
 
+  get '/figures/:id/edit' do
+    @figure = Figure.find(params[:id])
+
+      erb :'/figures/edit'
+  end
+
   get '/figures/:id' do
     @figure = Figure.find(params[:id])
-    binding.pry
-    erb :'figures/show/'
+    # binding.pry
+    erb :'figures/show'
   end
 
   post '/figures' do
