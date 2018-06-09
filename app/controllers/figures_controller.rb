@@ -37,7 +37,7 @@ class FiguresController < ApplicationController
       @figure.landmarks << Landmark.find_or_create_by(name: @landmark)
     end
     @figure.save
-    redirect "figure/#{@figure.id}"
+    redirect "figures/#{@figure.id}"
   end
 
   post '/figures' do
