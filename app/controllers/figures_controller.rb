@@ -14,7 +14,7 @@ class FiguresController < ApplicationController
   get '/figures/:id/edit' do
     @figure = Figure.find(params[:id])
     @title = @figure.titles.first
-
+    binding.pry
       erb :'/figures/edit'
   end
 
