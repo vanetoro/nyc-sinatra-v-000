@@ -27,11 +27,16 @@ class FiguresController < ApplicationController
 
     @figure = Figure.find(params[:id])
     @figure.name = params[:figure][:name]
-    binding.pry
-    new_title = Title.create(name: params[:figure][:title_ids])
-    @figure.title << new_title
-    new_landmark = Landmark.create(name: params[:figure][:landmark_ids])
-    @figure.landmark << new_landmark
+
+    @title = Title.create(name: params[:figure][:title_ids])
+    @landmark = Landmark.create(name: params[:figure][:landmark_ids])
+
+    if !@title.empty?
+      @figure.title << @title
+    end
+    if !@landmark.empty?
+      @figure.landmark << new_landmark
+    end 
     @figure.save
     binding.pry
     redirect "figure/#{@figure.id}"
