@@ -14,7 +14,7 @@ class LandmarksController < ApplicationController
 
   end
 
-  get '/landmarks/:slug' do
+  get '/landmarks/:id' do
 
     erb :'/landmarks/show'
 
