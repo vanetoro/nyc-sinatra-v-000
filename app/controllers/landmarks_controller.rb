@@ -30,4 +30,8 @@ class LandmarksController < ApplicationController
     erb :'/landmarks'
   end
 
+  patch '/landarks' do
+    binding.pry
+  end
+
 end
