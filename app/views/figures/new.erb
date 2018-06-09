@@ -4,7 +4,7 @@
   </br>
   <h3>Check all the titles that apply.</h3></br>
   <%@titles.each do |title|%>
-  <%= title.name%> <input type="checkbox"  name= 'figure[title_ids][]' value='<%= title.id%>'></br>
+  <%= title.name%> <input type="checkbox"  name= 'figure[title_ids][]' value='<%= title.id%>' id='title_<%= title.id%>'> </br>
 
   <%end%></br>
   and/or create a new title
@@ -14,10 +14,10 @@
   <h3>Check all the Landmarks that apply.</h3></br>
   <%@landmarks.each do |landmark|%>
 
-  <%= landmark.name%> <input type="checkbox"  id='landmark[name]' name= 'figure[landmark_ids][]' value='<%=landmark.id%>'></br>
+  <%= landmark.name%> <input type="checkbox" name= 'figure[landmark_ids][]' value='<%=landmark.id%>'  id='landmark_<%= landmark.id%>'></br>
   <%end%>
   and/or create a new landmark
   </br>
-  <input type="text" name= 'figure[landmark_name]' id="new_landmark">
+  <input type="text" name= 'figure[landmark_name]' id="landmark[name]">
   <input type="submit" value="Create New Figure">
 </form>
