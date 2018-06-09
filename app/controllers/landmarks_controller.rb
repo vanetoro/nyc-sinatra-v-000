@@ -31,7 +31,10 @@ class LandmarksController < ApplicationController
   end
 
   patch '/landmarks/:id' do
-    binding.pry
+    @landmark = Landmark.find(params[:id])
+    @landmark.name = params[:name]
+    @landmark.year_completed = params[:year_completed]
+    @landmark.save
   end
 
 end
