@@ -30,7 +30,7 @@ class FiguresController < ApplicationController
     @figure.title < new_title
     new_landmark = Landmark.create(params[:figure][:landmark_ids])
     @figure.landmark < new_landmark
-    binding.pry
+    # binding.pry
     redirect "figure/#{@figure.id}"
   end
 
