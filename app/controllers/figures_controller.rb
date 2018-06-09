@@ -33,14 +33,10 @@ class FiguresController < ApplicationController
     if !@title.empty?
       @figure.titles << Title.find_or_create_by(name: @title)
     end
-    binding.pry
     if !@landmark.empty?
       @figure.landmarks << Landmark.find_or_create_by(name: @landmark)
-
-       << new_landmark
     end
     @figure.save
-
     redirect "figure/#{@figure.id}"
   end
 
